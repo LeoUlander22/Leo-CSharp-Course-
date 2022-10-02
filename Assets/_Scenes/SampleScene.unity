@@ -3628,8 +3628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7f631548d84d44387432c4d1366eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOne: {fileID: 0}
-  playerTwo: {fileID: 0}
+  playerOne: {fileID: 1225608779}
+  playerTwo: {fileID: 696236470}
   timeBetweenTurns: 0
   turnDuration: 0
 --- !u!1 &2075197571
