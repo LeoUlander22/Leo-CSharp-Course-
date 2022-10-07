@@ -7,7 +7,7 @@ public class PlayerRaycast : MonoBehaviour
     private LineRenderer lineRenderer;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             RaycastHit result;
 

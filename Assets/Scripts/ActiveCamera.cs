@@ -9,7 +9,7 @@ public class ActiveCamera : MonoBehaviour
     [SerializeField] private float speed;
     void Update()
     {
-        //Vector3 targetPosition = myManager.GetCurrentPlayer().transform.position + distanceFromThePlayer;
+        Vector3 targetPosition = myManager.GetCurrentPlayer().transform.position + distanceFromThePlayer;
 
         float step = speed * Time.deltaTime;
 

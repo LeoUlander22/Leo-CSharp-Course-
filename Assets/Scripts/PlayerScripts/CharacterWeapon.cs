@@ -10,13 +10,13 @@ public class CharacterWeapon : MonoBehaviour
 
     private void Update()
     {
-        bool IsPlayerTurn;
-
+        //bool IsPlayerTurn;
+        Vector3 force = shootingStartPosition.forward;
         if (Input.GetKeyDown(KeyCode.V))
         {
             GameObject newProjectile = Instantiate(projectilePrefab);
             newProjectile.transform.position = shootingStartPosition.position;
-            newProjectile.GetComponent<Projectile>().Initialize();
+            newProjectile.GetComponent<Projectile>().Initialize(force);
         }
     }
 }

@@ -8,8 +8,8 @@ public class GameUI : MonoBehaviour
 {
     public delegate void Persistence();
 
-    public static event Persistence SaveGame;
-    public static event Persistence LoadGame;
+    //public static event Persistence SaveGame;
+    //public static event Persistence LoadGame;
 
     [SerializeField] private Image progressBar;
     [SerializeField] private Button button;

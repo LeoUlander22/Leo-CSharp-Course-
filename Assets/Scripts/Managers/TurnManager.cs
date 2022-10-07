@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    private static TurnManager instance;
+    public static TurnManager instance;
     [SerializeField] private PlayersTurn playerOne;
     [SerializeField] private PlayersTurn playerTwo;
     [SerializeField] private float timeBetweenTurns;
     [SerializeField] private float turnDuration;
 
-    private int currentPlayerIndex;
+    [SerializeField] private int currentPlayerIndex;
     private bool waitingForNextTurn;
     private float turnDelay;
     private float currentTurnTimer;
@@ -25,7 +25,12 @@ public class TurnManager : MonoBehaviour
             playerTwo.SetPlayerTurn(2);
         }
     }
+    private void Start()
+    {
+        
+    }
 
+    //Checks if the the timer should switch Player
     private void Update()
     {
         currentTurnTimer += Time.deltaTime;
@@ -38,13 +43,15 @@ public class TurnManager : MonoBehaviour
         
     }
 
-    public bool IsItPlayerTurn(int index)
+    //Returns true if the player index matches the currentPlayer.
+    public bool IsItPlayerTurn(int playerIndex)
     {
+        //should be toggled somewhere. it is unused.
         if (waitingForNextTurn)
         {
             return false;
         }
-        return index == currentPlayerIndex;
+        return playerIndex == currentPlayerIndex;
     }
 
     public static TurnManager GetInstance()
@@ -52,6 +59,7 @@ public class TurnManager : MonoBehaviour
         return instance;
     }
 
+    //Changes the currentPlayerIndex to the other player.
     public void ChangeTurn()
     {
         if(currentPlayerIndex == 1)
@@ -62,5 +70,9 @@ public class TurnManager : MonoBehaviour
         {
             currentPlayerIndex = 1;
         }
+    }
+    public void EnemyKilled()
+    {
+
     }
 }

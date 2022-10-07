@@ -111,8 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01b11ff7aff30449be8ec104511b64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 40
   projectileBody: {fileID: 5108485465147019440}
+  damageImdicatorPrefab: {fileID: 0}
+  gunBarrel: {fileID: 0}
 --- !u!54 &5108485465147019440
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayersTurn : MonoBehaviour
 {
-    private int playerIndex;
+    [SerializeField] private int playerIndex;
 
     public void SetPlayerTurn(int index)
     {
         playerIndex = index;
     }
 
+    //Checks the if the current player matches the current Index.
     public bool IsplayerTurn()
     {
         return TurnManager.GetInstance().IsItPlayerTurn(playerIndex);

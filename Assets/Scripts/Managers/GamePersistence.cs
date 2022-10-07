@@ -5,19 +5,19 @@ using UnityEngine;
 public class GamePersistence : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        GameUI.SaveGame += SaveGameData;
-        GameUI.LoadGame += LoadGameData;
-    }
+    //void Start()
+    //{
+    //    GameUI.SaveGame += SaveGameData;
+    //    GameUI.LoadGame += LoadGameData;
+    //}
 
-    // Update is called once per frame
-    public void SaveGameData()
-    {
+    //// Update is called once per frame
+    //public void SaveGameData()
+    //{
         
-    }
-    public void LoadGameData()
-    {
+    //}
+    //public void LoadGameData()
+    //{
 
-    }
+    //}
 }
