@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private PlayersTurn currentPlayerTurn;
     [SerializeField] private float f_speed = 2f;
     [SerializeField] private int playerIndex;
+    [SerializeField] private float rotationSpeed = 30f;
     
     void Update()
     {
@@ -17,7 +18,7 @@ public class CharacterController : MonoBehaviour
             //theCamera = GetComponent<Camera>(Camera.main);
             if (Input.GetAxis("Horizontal") != 0)
             {
-                transform.Translate(transform.right* f_speed * Time.deltaTime * Input.GetAxis("Horizontal"));
+                transform.Rotate(transform.up * rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"));
             }
 
             if (Input.GetAxis("Vertical") != 0)
@@ -43,7 +44,7 @@ public class CharacterController : MonoBehaviour
     //Adds force upward on jump, gravity does the rest.
     private void Jump()
     {
-        characterBody.AddForce(Vector3.up * 100f);
+        characterBody.AddForce(Vector3.up * 300f);
     }
     //Can be used to change the colour of the player upon taking damage?
     private void ColourChange()

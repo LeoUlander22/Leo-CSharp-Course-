@@ -43,6 +43,11 @@ public class TurnManager : MonoBehaviour
         
     }
 
+    public int GetCurrentPlayer()
+    {
+        return currentPlayerIndex;
+    }
+
     //Returns true if the player index matches the currentPlayer.
     public bool IsItPlayerTurn(int playerIndex)
     {
