@@ -44,7 +44,7 @@ public class CharacterController : MonoBehaviour
     //Adds force upward on jump, gravity does the rest.
     private void Jump()
     {
-        characterBody.AddForce(Vector3.up * 300f);
+        characterBody.AddForce(Vector3.up * 350f);
     }
     //Can be used to change the colour of the player upon taking damage?
     private void ColourChange()
