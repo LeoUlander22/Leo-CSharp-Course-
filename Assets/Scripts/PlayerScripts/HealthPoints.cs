@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class HealthPoints : MonoBehaviour
 {
     [SerializeField] int playerHealth = 100;
+    [SerializeField] AudioClip playerHurt;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class HealthPoints : MonoBehaviour
     {
         Debug.Log("hit the other player");
         playerHealth -= damage;
+        AudioSource.PlayClipAtPoint(playerHurt, transform.position);
         if (playerHealth <= 0)
         {
             SceneManager.LoadScene("SampleScene");

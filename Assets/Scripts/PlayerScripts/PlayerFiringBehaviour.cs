@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class PlayerFiringBehaviour : MonoBehaviour
 {
+    //Leo Ulander
+
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform shootingStartPosition;
     [SerializeField] public int _ammoCount = 5;
     [SerializeField] AudioClip emptyClipSound;
     [SerializeField] AudioClip firingSound;
     [SerializeField] private int playerIndex;
-    //public InputAction fireAction; Is an uneccesarry part of the "InputEditor. Since it's actually separate to InputSystem, despite being the reference in Manual.
+    //public InputAction fireAction; Is an uneccesarry part of the "InputEditor. Since it's actually separate to InputSystem, despite being the reference in Unity's Manual.
 
+    //This, whatever a IEnumerator is, Pauses the "Getting" function and refills the ammo count.
     private IEnumerator Reload()
     {
         Debug.Log("Started Reload Coroutine" + Time.time);
@@ -30,6 +33,7 @@ public class PlayerFiringBehaviour : MonoBehaviour
             Vector3 force = shootingStartPosition.forward;
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
+                //If there is a bullet available, one is instatiated, is given a specific force and the _ammoCount is reduced by 1.
                 if (_ammoCount > 0)
                 {
                     GameObject newProjectile = Instantiate(bulletPrefab);
@@ -42,10 +46,12 @@ public class PlayerFiringBehaviour : MonoBehaviour
                 else if (_ammoCount <= 0)
                 {
                     AudioSource.PlayClipAtPoint(emptyClipSound, transform.position);
+                    //Calls the IEnumerator Reload and forces this "else if" to wait for it.
                     StartCoroutine(Reload());
                 }
                 else
                     return;
+                //else if there is a bug/lapse in the execution of the _ammoCount, the Update can try again.
             }
         }
     }

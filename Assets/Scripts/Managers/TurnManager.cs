@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
+    //Leo Ulander
     public static TurnManager instance;
     [SerializeField] private PlayersTurn playerOne;
     [SerializeField] private PlayersTurn playerTwo;
@@ -30,7 +31,7 @@ public class TurnManager : MonoBehaviour
         
     }
 
-    //Checks if the the timer should switch Player
+    //Checks if a timer has reached the point to switch Player.
     private void Update()
     {
         currentTurnTimer += Time.deltaTime;
@@ -43,6 +44,7 @@ public class TurnManager : MonoBehaviour
         
     }
 
+    //Returns the current playerIndex.
     public int GetCurrentPlayer()
     {
         return currentPlayerIndex;

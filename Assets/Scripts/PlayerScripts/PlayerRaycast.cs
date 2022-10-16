@@ -25,7 +25,7 @@ public class PlayerRaycast : MonoBehaviour
             //if there was a hit on an object, the object hit is fetched and is destroyed.
             if (thereWasHit)
             {
-                CharacterController otherCharacter = result.collider.GetComponent<CharacterController>();
+                PlayerController otherCharacter = result.collider.GetComponent<PlayerController>();
                 if (otherCharacter != null)
                 {
                     Destroy(result.collider.gameObject);
